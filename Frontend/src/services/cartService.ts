@@ -1,0 +1,6 @@
+const API_URL = import.meta.env.VITE_API_URL || "/api";
+export interface AddToCartRequest { customerId:string; productId:number; quantity:number; }
+export interface CartItem { productId:number; productName:string; imageUrl:string|null; price:number; quantity:number; subtotal:number; }
+export interface Cart { id:number|null; customerId:string; totalAmount:number; items:CartItem[]; }
+async function request<T>(path:string,options:RequestInit={}):Promise<T>{const res=await fetch(`${API_URL}${path}`,{headers:{"Content-Type":"application/json",...(options.headers||{})},...options});if(!res.ok)throw new Error(await res.text().catch(()=>`Request failed ${res.status}`));if(res.status===204)return undefined as T;return res.json()}
+export default { addToCart:(data:AddToCartRequest)=>request<Cart>("/cart/add",{method:"POST",body:JSON.stringify(data)}), getCart:(customerId:string)=>request<Cart>(`/cart/${encodeURIComponent(customerId)}`), updateQuantity:(customerId:string,productId:number,quantity:number)=>request<Cart>(`/cart/${encodeURIComponent(customerId)}/${productId}?quantity=${quantity}`,{method:"PUT"}), removeItem:(customerId:string,productId:number)=>request<Cart>(`/cart/${encodeURIComponent(customerId)}/${productId}`,{method:"DELETE"}), clearCart:(customerId:string)=>request<void>(`/cart/${encodeURIComponent(customerId)}/clear`,{method:"DELETE"}) };

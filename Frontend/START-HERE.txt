@@ -1,0 +1,13 @@
+ROUTINE LABZ FRONTEND
+
+1. Extract this ZIP.
+2. Open Git Bash inside the folder containing package.json.
+3. Run:
+
+   npm install
+   npm run dev
+
+4. Open the localhost URL shown by Vite.
+
+Do NOT run npm install from a parent folder.
+The folder you open must contain package.json.

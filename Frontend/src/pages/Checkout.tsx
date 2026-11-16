@@ -1,0 +1,12 @@
+import React,{useState} from "react";
+import { useCart } from "../context/CartContext";
+import { getCustomerId } from "../utils/customer";
+import { orderService } from "../services/orderService";
+
+export default function Checkout(){
+  const {cart}=useCart(); const [status,setStatus]=useState("idle");
+  const [form,setForm]=useState({customerName:"",email:"",phone:"",address:"",city:"",state:"",pincode:""});
+  const update=(e:React.ChangeEvent<HTMLInputElement|HTMLTextAreaElement>)=>setForm(p=>({...p,[e.target.name]:e.target.value}));
+  const submit=async(e:React.FormEvent)=>{e.preventDefault();if(!cart?.items?.length)return;setStatus("loading");try{const order=await orderService.checkout({customerId:getCustomerId(),...form});sessionStorage.setItem("routineLabzOrder",JSON.stringify(order));window.location.href="/order-success"}catch{setStatus("error")}};
+  return <div className="shop-page"><header className="shop-header"><a href="/" className="shop-logo">ROUTINE <b>LABZ</b></a><a href="/cart" className="shop-back">← CART</a></header><main className="shop-container checkout"><div className="shop-title"><span>CHECKOUT / 02</span><h1>COMPLETE THE <em>ROUTINE.</em></h1></div><div className="checkout-layout"><form className="checkout-form" onSubmit={submit}><label>FULL NAME *<input name="customerName" value={form.customerName} onChange={update} required/></label><label>EMAIL *<input name="email" type="email" value={form.email} onChange={update} required/></label><label>PHONE *<input name="phone" value={form.phone} onChange={update} required/></label><label>ADDRESS *<textarea name="address" value={form.address} onChange={update} required rows={3}/></label><div className="checkout-two"><label>CITY *<input name="city" value={form.city} onChange={update} required/></label><label>STATE *<input name="state" value={form.state} onChange={update} required/></label></div><label>PINCODE *<input name="pincode" value={form.pincode} onChange={update} required/></label>{status==="error"&&<div className="form-error">Unable to place the order. Check your backend connection and try again.</div>}<button className="btn-gold" disabled={status==="loading"}>{status==="loading"?"PLACING ORDER...":"PLACE ORDER →"}</button></form><aside className="cart-summary"><span>YOUR STACK</span>{cart?.items?.map(i=><div className="summary-line" key={i.productId}><span>{i.productName} × {i.quantity}</span><b>₹{Number(i.subtotal).toLocaleString("en-IN")}</b></div>)}<hr/><h2>₹{Number(cart?.totalAmount||0).toLocaleString("en-IN")}</h2></aside></div></main></div>;
+}

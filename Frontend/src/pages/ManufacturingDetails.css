@@ -1,0 +1,430 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap');
+
+.rl-manufacturing-page {
+  --rl-red: #d83d43;
+  --rl-ink: #17191f;
+  --rl-card: #f7f6f6;
+  --rl-muted: #66656a;
+
+  min-height: 100vh;
+  padding: 42px 18px 28px;
+  color: #f7f7f8;
+
+  background:
+    radial-gradient(
+      ellipse at 100% 65%,
+      rgba(117, 29, 47, .32),
+      transparent 34%
+    ),
+    radial-gradient(
+      ellipse at 0% 10%,
+      rgba(34, 48, 72, .36),
+      transparent 35%
+    ),
+    #090c14;
+
+  font-family: Inter, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.rl-manufacturing-page *,
+.rl-manufacturing-page *::before,
+.rl-manufacturing-page *::after {
+  box-sizing: border-box;
+}
+
+/* MAIN CONTAINER */
+
+.rl-page-shell {
+  width: min(100%, 620px);
+  margin: 0 auto;
+}
+
+/* PAGE HEADER */
+
+.rl-page-header {
+  text-align: center;
+  margin: 0 0 26px;
+}
+
+.rl-eyebrow {
+  margin: 0 0 7px;
+  color: #f08a8d;
+
+  font: 700 11px/1.2 Rajdhani, sans-serif;
+  letter-spacing: .2em;
+}
+
+.rl-page-header h1 {
+  margin: 0;
+  color: #fff;
+
+  font-size: clamp(25px, 5vw, 32px);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+/* WHITE INFORMATION CARD */
+
+.rl-info-card {
+  width: 100%;
+  margin: 0 auto 26px;
+
+  padding: 34px clamp(22px, 6vw, 48px) 38px;
+
+  color: var(--rl-ink);
+  background: var(--rl-card);
+
+  border: 1px solid rgba(255,255,255,.72);
+  border-radius: 25px;
+
+  box-shadow:
+    0 16px 36px rgba(0,0,0,.22),
+    inset 0 0 0 1px rgba(20,20,20,.025);
+
+  text-align: center;
+}
+
+/* ICON */
+
+.rl-large-icon {
+  display: flex;
+  justify-content: center;
+
+  margin: 0 0 13px;
+  color: var(--rl-red);
+}
+
+.rl-large-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+/* SECTION LABEL */
+
+.rl-section-label {
+  margin: 0;
+
+  color: var(--rl-red);
+
+  font: 700 13px/1.4 Rajdhani, Inter, sans-serif;
+  letter-spacing: .17em;
+  text-transform: uppercase;
+}
+
+/* BRAND LOGO / WORDMARK */
+
+.rl-wordmark {
+  display: inline-block;
+
+  margin: 19px auto 0;
+  padding: 5px 10px 4px;
+
+  color: #fff;
+  background: #101114;
+
+  border: 1px solid #777;
+
+  font: 800 clamp(22px, 5vw, 28px)/1 Rajdhani, sans-serif;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.rl-brand-image {
+  display: block;
+
+  max-width: 230px;
+  max-height: 76px;
+
+  width: auto;
+  height: auto;
+
+  object-fit: contain;
+  margin: 17px auto 0;
+}
+
+/* RED DIVIDER */
+
+.rl-red-rule {
+  display: block;
+
+  width: 66px;
+  height: 3px;
+
+  margin: 24px auto 18px;
+
+  background: var(--rl-red);
+}
+
+/* TAGLINE */
+
+.rl-tagline {
+  max-width: 390px;
+  margin: 0 auto;
+
+  padding: 13px 15px;
+
+  color: #fff;
+  background: #0d0d10;
+
+  border: 1px solid var(--rl-red);
+  border-radius: 11px;
+
+  font: 700 11px/1.5 Rajdhani, Inter, sans-serif;
+  letter-spacing: .16em;
+}
+
+/* DESCRIPTION */
+
+.rl-description {
+  margin: 28px auto 0;
+  max-width: 450px;
+
+  color: var(--rl-muted);
+
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.rl-description p {
+  margin: 0 0 20px;
+}
+
+.rl-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* SUBSECTIONS */
+
+.rl-subsection {
+  margin-top: 36px;
+  padding-top: 25px;
+
+  border-top: 1px solid rgba(24,24,24,.08);
+}
+
+/* CONTACT AND DETAIL LISTS */
+
+.rl-contact-list,
+.rl-detail-list {
+  display: grid;
+  gap: 13px;
+
+  margin-top: 19px;
+  text-align: left;
+}
+
+.rl-contact-row,
+.rl-detail-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+
+  min-width: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+.rl-contact-row:hover {
+  color: var(--rl-red);
+}
+
+/* ROUND RED ICONS */
+
+.rl-round-icon {
+  display: inline-flex;
+  flex: 0 0 39px;
+
+  width: 39px;
+  height: 39px;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  background: var(--rl-red);
+
+  border-radius: 50%;
+
+  box-shadow: 0 3px 8px rgba(216,61,67,.18);
+}
+
+.rl-round-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* CONTACT TEXT */
+
+.rl-contact-copy,
+.rl-detail-copy {
+  display: grid;
+  gap: 3px;
+
+  min-width: 0;
+}
+
+.rl-contact-label {
+  color: #777;
+
+  font-size: 10px;
+  font-weight: 700;
+
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.rl-contact-value {
+  overflow-wrap: anywhere;
+
+  color: #44434a;
+
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+/* MANUFACTURER CARD */
+
+.rl-manufacturer-card {
+  padding-top: 34px;
+}
+
+.rl-manufacturer-name {
+  max-width: 440px;
+
+  margin: 18px auto 0;
+
+  color: #17171a;
+
+  font-size: clamp(23px, 5vw, 29px);
+  line-height: 1.23;
+  font-weight: 700;
+}
+
+.rl-manufacturer-card .rl-red-rule {
+  margin-top: 18px;
+}
+
+.rl-manufacturer-card .rl-description {
+  margin-top: 24px;
+}
+
+/* MANUFACTURING DETAILS */
+
+.rl-manufacturing-details {
+  margin-top: 34px;
+}
+
+.rl-detail-copy strong {
+  color: #333238;
+
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+.rl-detail-copy > span {
+  color: #66656a;
+
+  font-size: 12px;
+  line-height: 1.55;
+
+  overflow-wrap: anywhere;
+}
+
+/* CERTIFICATION */
+
+.rl-certification-section {
+  margin-top: 30px;
+}
+
+.rl-certification-image {
+  display: block;
+
+  max-width: min(100%, 290px);
+  max-height: 150px;
+
+  margin: 20px auto 0;
+
+  object-fit: contain;
+}
+
+.rl-certification-placeholder {
+  width: min(100%, 290px);
+  min-height: 76px;
+
+  display: grid;
+  place-items: center;
+
+  margin: 20px auto 0;
+  padding: 15px;
+
+  color: #8b888d;
+
+  border: 1px dashed #c9c5c7;
+  border-radius: 10px;
+
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* FOOTER */
+
+.rl-page-footer {
+  padding: 2px 0 10px;
+
+  color: rgba(255,255,255,.48);
+
+  text-align: center;
+
+  font-size: 10px;
+  letter-spacing: .06em;
+}
+
+/* DESKTOP */
+
+@media (min-width: 760px) {
+  .rl-manufacturing-page {
+    padding-top: 58px;
+  }
+
+  .rl-info-card {
+    padding-top: 40px;
+    padding-bottom: 44px;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 420px) {
+  .rl-manufacturing-page {
+    padding: 28px 12px 18px;
+  }
+
+  .rl-page-header {
+    margin-bottom: 20px;
+  }
+
+  .rl-info-card {
+    margin-bottom: 18px;
+
+    padding: 27px 20px 30px;
+
+    border-radius: 21px;
+  }
+
+  .rl-description {
+    font-size: 12px;
+    line-height: 1.85;
+  }
+
+  .rl-description p {
+    margin-bottom: 17px;
+  }
+
+  .rl-round-icon {
+    flex-basis: 36px;
+    width: 36px;
+    height: 36px;
+  }
+}
