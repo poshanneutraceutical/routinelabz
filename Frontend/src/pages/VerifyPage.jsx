@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const API_BASE = import.meta.env.VITE_VERIFY_API_URL || "http://localhost:8080";
+const API_BASE = import.meta.env.VITE_VERIFY_API_URL || "/api";
 
 export default function VerifyPage() {
   const [form, setForm] = useState({ name: "", phone: "", code: "" });
