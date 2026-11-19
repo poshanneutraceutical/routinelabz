@@ -1,0 +1,355 @@
+
+/* ============================================
+   ROUTINE LABZ — FOUR PRODUCT CARDS
+   FINAL FLAVOUR + PRICE + CART DESIGN
+============================================ */
+
+/* FOUR CARDS IN ONE DESKTOP ROW */
+
+.products-section .product-grid.product-variant-grid {
+    display: grid !important;
+    width: 100% !important;
+    max-width: 1560px !important;
+    margin: 35px auto 0 !important;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+    gap: 18px !important;
+    align-items: stretch;
+}
+
+/* CARD */
+
+.products-section .product-variant-card {
+    display: flex;
+    flex-direction: column;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    overflow: hidden;
+}
+
+/* IMAGE */
+
+.products-section .product-variant-image-link
+.product-image-wrap {
+    position: relative;
+    height: 220px;
+    min-height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.products-section .product-variant-image-link
+.product-image-wrap img {
+    width: auto;
+    height: 205px;
+    max-width: 85%;
+    max-height: 205px;
+    object-fit: contain;
+}
+
+/* CARD BODY */
+
+.products-section .product-variant-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    min-width: 0;
+    padding: 15px 14px;
+}
+
+.products-section .product-variant-body h3 {
+    font-size: 16px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+
+.products-section .product-variant-body > p {
+    min-height: 48px;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+/* NUTRITION DETAILS */
+
+.products-section .product-variant-body .spec-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 4px;
+    margin: 13px 0;
+}
+
+.products-section .product-variant-body .spec-grid div {
+    min-width: 0;
+    padding: 8px 3px;
+    text-align: center;
+}
+
+/* ============================================
+   FLAVOUR SELECTOR
+============================================ */
+
+.products-section .product-variant-card .product-flavour-picker {
+    display: block !important;
+    width: 100%;
+    margin: 12px 0 0 !important;
+    padding: 12px 0 !important;
+
+    border-top: 1px solid rgba(255,255,255,.10);
+    border-bottom: 1px solid rgba(255,255,255,.10);
+}
+
+.products-section .product-variant-card
+.product-flavour-picker > span {
+    display: block !important;
+    margin-bottom: 10px !important;
+
+    color: #a4a4a4 !important;
+    font-family: Orbitron, sans-serif !important;
+    font-size: 9px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.2px !important;
+}
+
+/* BUTTON GROUP */
+
+.products-section .product-variant-card
+.product-flavour-options {
+    display: flex !important;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px !important;
+    width: 100%;
+}
+
+/* UNSELECTED FLAVOUR */
+
+.products-section .product-variant-card
+.product-flavour-options button {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 76px !important;
+    min-height: 36px !important;
+    padding: 8px 12px !important;
+
+    border: 1px solid #555 !important;
+    border-radius: 0 !important;
+
+    color: #c1c1c1 !important;
+    background: #090909 !important;
+
+    font-family: Orbitron, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: .8px !important;
+
+    cursor: pointer;
+    transition: all .2s ease;
+}
+
+/* SELECTED FLAVOUR */
+
+.products-section .product-variant-card
+.product-flavour-options button.selected,
+.products-section .product-variant-card
+.product-flavour-options button.active,
+.products-section .product-variant-card
+.product-flavour-options button[aria-pressed="true"] {
+    border-color: #d9a527 !important;
+    color: #080808 !important;
+
+    background: linear-gradient(
+        110deg,
+        #ffe17a 0%,
+        #dca51c 100%
+    ) !important;
+
+    box-shadow: 0 0 10px rgba(218,165,32,.12);
+}
+
+/* HOVER */
+
+.products-section .product-variant-card
+.product-flavour-options button:hover {
+    border-color: #e8ba48 !important;
+    color: #f3c85b !important;
+}
+
+/* ============================================
+   PRICE LEFT + ADD TO CART RIGHT
+============================================ */
+
+.products-section .product-variant-card
+.product-variant-buy-row {
+    display: grid !important;
+
+    grid-template-columns: minmax(75px, 90px) minmax(0, 1fr) !important;
+
+    align-items: center !important;
+    justify-content: initial !important;
+
+    flex-wrap: nowrap !important;
+    gap: 10px !important;
+
+    width: 100% !important;
+    margin: 14px 0 12px !important;
+}
+
+/* PRICE BLOCK */
+
+.products-section .product-variant-card
+.product-variant-price {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: center !important;
+
+    gap: 5px !important;
+    min-width: 0 !important;
+    width: 100%;
+}
+
+.products-section .product-variant-card
+.product-variant-price small {
+    display: block !important;
+    margin: 0 !important;
+
+    color: #858585 !important;
+    font-family: Orbitron, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.4 !important;
+}
+
+.products-section .product-variant-card
+.product-variant-price strong {
+    display: block !important;
+    margin: 0 !important;
+
+    color: #f1c34b !important;
+    font-family: Orbitron, sans-serif !important;
+    font-size: 15px !important;
+    font-weight: 800 !important;
+    line-height: 1.4 !important;
+    white-space: nowrap !important;
+}
+
+/* ADD TO CART BUTTON */
+
+.products-section .product-variant-card
+.product-variant-buy-row .product-add-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    width: 100% !important;
+    min-width: 0 !important;
+    min-height: 42px !important;
+
+    flex: initial !important;
+    margin: 0 !important;
+    padding: 9px 6px !important;
+
+    border-radius: 0 !important;
+
+    color: #080808 !important;
+    background: linear-gradient(
+        110deg,
+        #ffe17a,
+        #dba318
+    ) !important;
+
+    font-family: Orbitron, sans-serif !important;
+    font-size: 8px !important;
+    font-weight: 800 !important;
+    letter-spacing: .8px !important;
+
+    white-space: nowrap !important;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.products-section .product-variant-card
+.product-variant-buy-row .product-add-btn:hover:not(:disabled) {
+    filter: brightness(1.12);
+    transform: translateY(-1px);
+}
+
+.products-section .product-variant-card
+.product-variant-buy-row .product-add-btn:disabled {
+    opacity: .45 !important;
+    cursor: not-allowed !important;
+    filter: grayscale(.5);
+}
+
+/* ERROR MESSAGE */
+
+.products-section .product-variant-card
+.product-variant-unavailable,
+.products-section .product-variant-card
+.product-variant-error {
+    display: block;
+    margin: 5px 0 10px;
+    color: #e58c8c !important;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+/* BUSINESS ENQUIRY */
+
+.products-section .product-variant-body .product-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 12px;
+    font-size: 8px;
+}
+
+/* ============================================
+   TABLET — TWO CARDS
+============================================ */
+
+@media (max-width: 1100px) {
+    .products-section .product-grid.product-variant-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 850px !important;
+        gap: 18px !important;
+    }
+}
+
+/* ============================================
+   MOBILE — ONE CARD
+============================================ */
+
+@media (max-width: 620px) {
+    .products-section .product-grid.product-variant-grid {
+        grid-template-columns: minmax(0, 1fr) !important;
+        max-width: 410px !important;
+    }
+
+    .products-section .product-variant-image-link
+    .product-image-wrap {
+        height: 265px;
+        min-height: 265px;
+    }
+
+    .products-section .product-variant-image-link
+    .product-image-wrap img {
+        height: 245px;
+        max-height: 245px;
+    }
+
+    .products-section .product-variant-body {
+        padding: 17px;
+    }
+
+    .products-section .product-variant-buy-row {
+        grid-template-columns: 95px minmax(0, 1fr) !important;
+    }
+}

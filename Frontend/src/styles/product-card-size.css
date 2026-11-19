@@ -1,0 +1,210 @@
+
+/* ==========================================
+   ROUTINE LABZ - COMPACT PRODUCT CARDS
+   CSS ONLY - NO IMAGE OR CART LOGIC CHANGES
+========================================== */
+
+.products-section .product-grid {
+  width: 100%;
+  max-width: 740px;
+  margin: 34px auto 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  align-items: stretch;
+  gap: 20px;
+}
+
+.products-section .product-card {
+  width: 100%;
+  min-width: 0;
+  max-width: 360px;
+
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+/* PRODUCT NUMBER */
+
+.products-section .product-number {
+  top: 12px;
+  left: 14px;
+  font-size: 0.54rem;
+}
+
+/* PRODUCT IMAGE */
+
+.products-section .product-image-wrap {
+  height: 218px;
+  min-height: 218px;
+  padding: 10px 12px;
+}
+
+.products-section .product-glow {
+  width: 175px;
+  height: 175px;
+  filter: blur(60px);
+}
+
+.products-section .product-image-wrap img {
+  height: 198px;
+  max-height: 198px;
+  max-width: 78%;
+  width: auto;
+  object-fit: contain;
+}
+
+/* FLAVOUR LABEL */
+
+.products-section .product-chip {
+  top: 11px;
+  right: 11px;
+  padding: 5px 7px;
+
+  font-size: 0.46rem;
+  letter-spacing: 1px;
+}
+
+/* PRODUCT INFORMATION */
+
+.products-section .product-body {
+  padding: 15px 16px 14px;
+}
+
+.products-section .product-label {
+  margin-bottom: 6px;
+  font-size: 0.48rem;
+  letter-spacing: 1.4px;
+}
+
+.products-section .product-body h3 {
+  margin: 0 0 7px;
+  font-size: 1.08rem;
+  line-height: 1.22;
+}
+
+.products-section .product-body p {
+  min-height: 42px;
+  margin: 0;
+
+  font-size: 0.74rem;
+  line-height: 1.5;
+}
+
+/* NUTRITION INFORMATION */
+
+.products-section .spec-grid {
+  gap: 5px;
+  margin: 13px 0 14px;
+}
+
+.products-section .spec-grid div {
+  min-width: 0;
+  padding: 8px 3px 7px;
+}
+
+.products-section .spec-grid strong {
+  font-size: 0.73rem;
+  line-height: 1.25;
+}
+
+.products-section .spec-grid small {
+  margin-top: 3px;
+  font-size: 0.47rem;
+  letter-spacing: 0.35px;
+}
+
+/* ADD TO CART BUTTON */
+
+.products-section .product-cart-actions,
+.products-section .product-purchase-row {
+  gap: 9px;
+  margin-top: 11px;
+}
+
+.products-section .product-add-btn,
+.products-section .product-add-btn-compact {
+  min-width: 124px;
+  min-height: 38px;
+  padding: 9px 12px;
+
+  font-size: 0.52rem;
+  letter-spacing: 0.9px;
+}
+
+.products-section .product-price-compact strong {
+  font-size: 1.05rem;
+}
+
+/* PRODUCT LINKS */
+
+.products-section .product-link,
+.products-section .product-footer-links {
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.products-section .product-link,
+.products-section .product-view-details,
+.products-section .product-business-link {
+  font-size: 0.48rem;
+  letter-spacing: 0.75px;
+}
+
+/* ==========================================
+   TABLET AND MOBILE
+========================================== */
+
+@media (max-width: 760px) {
+
+  .products-section .product-grid {
+    grid-template-columns: minmax(0, 340px);
+    justify-content: center;
+
+    max-width: 340px;
+    gap: 18px;
+    margin-top: 25px;
+  }
+
+  .products-section .product-card {
+    max-width: 340px;
+  }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 420px) {
+
+  .products-section .product-image-wrap {
+    height: 205px;
+    min-height: 205px;
+  }
+
+  .products-section .product-image-wrap img {
+    height: 187px;
+    max-height: 187px;
+  }
+
+  .products-section .product-body {
+    padding: 14px 13px 12px;
+  }
+
+  .products-section .product-body h3 {
+    font-size: 1rem;
+  }
+
+  .products-section .product-body p {
+    min-height: 38px;
+    font-size: 0.7rem;
+  }
+
+  .products-section .product-add-btn,
+  .products-section .product-add-btn-compact {
+    min-width: 116px;
+    min-height: 36px;
+    padding: 8px 9px;
+
+    font-size: 0.49rem;
+  }
+}
